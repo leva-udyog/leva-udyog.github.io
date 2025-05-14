@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leva Udyog</title>
+
+  <!-- Tailwind CSS (latest version) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Optional custom styling for dark mode */
+    body.dark {
+      background-color: #1a202c;
+      color: white;
+    }
+    .dark .card {
+      background-color: #2d3748;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 font-sans text-gray-800">
+  <!-- Header -->
+  <header class="bg-cyan-800 text-white p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Leva Udyog</h1>
+
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto py-8 px-4">
+    <!-- Filters -->
+    <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-6">
+      <input id="search" type="text" placeholder="🔍 Search by name"
+        class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
+      <select id="categoryFilter"
+        class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <option value="">All Categories</option>
+      </select>
+
+      <select id="locationFilter"
+        class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <option value="">All Locations</option>
+      </select>
+
+      <select id="sortBy" class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <option value="">Sort By</option>
+        <option value="name">Name (A-Z)</option>
+        <option value="location">Location (A-Z)</option>
+      </select>
+    </div>
+
+    <!-- Business Cards -->
+    <div id="businessList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+    <!-- Pagination -->
+    <div id="pagination" class="flex justify-center mt-10 flex-wrap gap-2"></div>
+  </main>
+
+  <!-- Modal for Detail View -->
+  <div id="modal" class="fixed inset-0 hidden bg-black bg-opacity-50 z-50 flex items-center justify-center">
+    <div id="modal-content" class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg max-w-3xl w-full relative">
+      <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-red-500">✖</button>
+      <h2 id="modalName" class="text-2xl font-bold text-blue-700 dark:text-yellow-300 mb-2"></h2>
+      <img id="modalImage" class="w-full h-48 object-cover rounded mb-2" />
+      <p id="modalCategory"></p>
+      <p id="modalLocation"></p>
+      <p id="modalDescription" class="text-sm mt-2"></p>
+      <p id="modalContact" class="mt-2 font-medium text-blue-600 dark:text-yellow-200"></p>
+      <p id="modalEmail" class="mt-2 font-medium text-blue-600 dark:text-yellow-200"></p>
+      <!-- Products -->
+      <div id="modalProducts" class="mt-4">
+        <h3 class="font-semibold text-lg text-blue-700 dark:text-yellow-300">Products:</h3>
+        <div id="modalProductList" class="list-disc pl-5"></div>
+      </div>
+
+      <!-- Services -->
+      <div id="modalServices" class="mt-4">
+        <h3 class="font-semibold text-lg text-blue-700 dark:text-yellow-300">Services:</h3>
+        <div id="modalServiceList" class="list-disc pl-5"></div>
+      </div>
+      <div id="modalMap" class="w-full h-56 mt-4"></div>
+    </div>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollTop"
+    class="fixed bottom-6 right-6 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hidden">
+    ⬆️ Top
+  </button>
+
+  <!-- Footer -->
+  <footer class="bg-gray-200 text-center text-sm py-4 mt-10 text-gray-600 dark:bg-gray-800 dark:text-gray-300">
+    &copy; 2025 Leva Udyog. Built with ❤️ for the community.
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 600, easing: 'ease-in-out' });</script>
+
+  <!-- Main Script -->
+  <script>
+    const businessesPerPage = 12;
+    let businesses = [];
+    let currentPage = 1;
+
+    async function loadBusinesses() {
+      const res = await fetch("data/businesses.json");
+      businesses = await res.json();
+      populateFilters(businesses);
+      renderBusinesses();
+    }
+
+    function populateFilters(data) {
+      const categorySet = new Set();
+      const locationSet = new Set();
+      data.forEach(b => {
+        categorySet.add(b.category);
+        locationSet.add(b.location);
+      });
+
+      const categoryFilter = document.getElementById("categoryFilter");
+      categorySet.forEach(cat => {
+        const opt = document.createElement("option");
+        opt.value = cat;
+        opt.textContent = cat;
+        categoryFilter.appendChild(opt);
+      });
+
+      const locationFilter = document.getElementById("locationFilter");
+      locationSet.forEach(loc => {
+        const opt = document.createElement("option");
+        opt.value = loc;
+        opt.textContent = loc;
+        locationFilter.appendChild(opt);
+      });
+    }
+
+    function filterBusinesses() {
+      const search = document.getElementById("search").value.toLowerCase();
+      const category = document.getElementById("categoryFilter").value;
+      const location = document.getElementById("locationFilter").value;
+      const sortBy = document.getElementById("sortBy").value;
+
+      let filtered = businesses.filter(b => {
+        return (
+          b.name.toLowerCase().includes(search) &&
+          (category === "" || b.category === category) &&
+          (location === "" || b.location === location)
+        );
+      });
+
+      if (sortBy) {
+        filtered.sort((a, b) => a[sortBy].localeCompare(b[sortBy]));
+      }
+
+      return filtered;
+    }
+
+    function renderBusinesses() {
+      const list = document.getElementById("businessList");
+      list.innerHTML = "";
+
+      const filtered = filterBusinesses();
+      const totalPages = Math.max(1, Math.ceil(filtered.length / businessesPerPage));
+      const paginated = filtered.slice((currentPage - 1) * businessesPerPage, currentPage * businessesPerPage);
+
+      paginated.forEach(biz => {
+        const card = document.createElement("div");
+        card.className = "bg-white rounded-lg shadow-md p-4 card dark:bg-gray-700 cursor-pointer";
+        card.setAttribute("data-aos", "fade-up");
+        card.innerHTML = `
+          <img loading="lazy" src="${biz.image}" class="w-full h-40 object-cover mb-2 rounded" />
+          <h2 class="text-xl font-bold text-gray-600 dark:text-yellow-300">${biz.name}</h2>
+          <p class="text-gray-500 text-sm"><strong>Category:</strong> ${biz.category}</p>
+          <p class="text-gray-500 text-sm"><strong>Location:</strong> ${biz.location}</p>
+        `;
+        card.addEventListener("click", () => openModal(biz));
+        list.appendChild(card);
+      });
+
+      renderPagination(totalPages);
+    }
+
+    function renderPagination(totalPages) {
+      const container = document.getElementById("pagination");
+      container.innerHTML = "";
+
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement("button");
+        btn.className = `px-3 py-1 rounded border ${i === currentPage ? 'bg-blue-600 text-white' : 'bg-white text-blue-600'} hover:bg-blue-100`;
+        btn.textContent = i;
+        btn.addEventListener("click", () => {
+          currentPage = i;
+          renderBusinesses();
+        });
+        container.appendChild(btn);
+      }
+    }
+
+    function openModal(biz) {
+      document.getElementById("modal").classList.remove("hidden");
+      document.getElementById("modalName").textContent = biz.name;
+      document.getElementById("modalImage").src = biz.image;
+      document.getElementById("modalCategory").textContent = `Category: ${biz.category}`;
+      document.getElementById("modalLocation").textContent = `Location: ${biz.location}`;
+      document.getElementById("modalDescription").textContent = biz.description;
+      document.getElementById("modalContact").textContent = `📞 ${biz.contact}`;
+      if(biz.email){
+        document.getElementById("modalEmail").textContent = `✉️ ${biz.email}`;
+      } 
+      else{
+        document.getElementById("modalEmail").textContent = '';
+      }
+      // Display Products
+      const productList = document.getElementById("modalProductList");
+      const modalProducts = document.getElementById("modalProducts");
+
+      if ((biz.products == undefined) || ((biz.products != undefined) && (biz.products.length === 0))) {
+        modalProducts.style.display = "none"
+      } else {
+        modalProducts.style.display = "block"
+        console.log(productList);
+        productList.innerHTML = '';  // Clear previous products
+        biz.products.forEach(product => {
+          productList.innerHTML += `${product}, `;
+        });
+      }
+      
+
+      // Display Services
+      const serviceList = document.getElementById("modalServiceList");
+      const modalServices = document.getElementById("modalServices");
+      
+      if ((biz.services == undefined) || ((biz.services != undefined) && (biz.services.length === 0))) {
+        modalServices.style.display = "none"
+      } else {
+        modalServices.style.display = "block"
+        serviceList.innerHTML = '';  // Clear previous services
+        biz.services.forEach(service => {
+          serviceList.innerHTML += `${service}, `;
+        });
+      }
+      
+      document.getElementById("modalMap").innerHTML = `Google Map: <u><a href=${biz.googleMapLink} target="_blank">Open in google maps</a></u>`;
+    }
+
+    document.getElementById("closeModal").addEventListener("click", () => {
+      document.getElementById("modal").classList.add("hidden");
+    });
+
+    document.getElementById("modal").addEventListener("click", () => {
+      document.getElementById("modal").classList.add("hidden");
+    });
+
+    document.getElementById("modal-content").addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+
+
+    document.getElementById("search").addEventListener("input", () => {
+      currentPage = 1;
+      renderBusinesses();
+    });
+
+    document.getElementById("categoryFilter").addEventListener("change", () => {
+      currentPage = 1;
+      renderBusinesses();
+    });
+
+    document.getElementById("locationFilter").addEventListener("change", () => {
+      currentPage = 1;
+      renderBusinesses();
+    });
+
+    document.getElementById("sortBy").addEventListener("change", () => {
+      currentPage = 1;
+      renderBusinesses();
+    });
+
+    document.getElementById("scrollTop").addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    window.addEventListener("scroll", () => {
+      document.getElementById("scrollTop").classList.toggle("hidden", window.scrollY < 200);
+    });
+
+    loadBusinesses();
+  </script>
+</body>
+
+</html>

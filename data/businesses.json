@@ -1,0 +1,173 @@
+[
+    {
+      "name": "Patil Kirana Stores 1",
+      "category": "Grocery",
+      "location": "Badlapur",
+      "contact": "9876543210",
+      "email": "abcd@gmail.com",
+      "description": "Daily needs and groceries for your home",
+      "products": [
+        "Rice",
+        "Wheat",
+        "Sugar",
+        "Spices"
+      ],
+      "services": [
+        "Home Delivery",
+        "Online Ordering"
+      ],
+      "image": "https://via.placeholder.com/150",
+      "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+    },
+    {
+      "name": "Shree Mobile Shop 2",
+      "category": "Electronics",
+      "location": "Nashik",
+      "contact": "9123456780",
+      "description": "Latest phones and accessories",
+      "products": ["iPhone", "Samsung Galaxy", "OnePlus"],
+      "services": ["Repair Services", "Accessories"],
+      "image": "https://via.placeholder.com/150",
+      "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+    },
+    {
+        "name": "Patil Kirana Stores 3",
+        "category": "Grocery",
+        "location": "Badlapur",
+        "contact": "9876543210",
+        "products": [
+            "Rice",
+            "Wheat",
+            "Sugar",
+            "Spices"
+        ],
+        "services": [
+            "Home Delivery",
+            "Online Ordering"
+        ],
+        "description": "Daily needs and groceries for your home",
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "name": "Shree Mobile Shop 4",
+        "category": "Electronics",
+        "location": "Nashik",
+        "contact": "9123456780",
+        "description": "Latest phones and accessories",
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "name": "Patil Kirana Stores 5",
+        "category": "Grocery",
+        "location": "Badlapur",
+        "contact": "9876543210",
+        "description": "Daily needs and groceries for your home",
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "name": "Shree Mobile Shop 6 ",
+        "category": "Electronics",
+        "location": "Nashik",
+        "contact": "9123456780",
+        "description": "Latest phones and accessories",
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "name": "Psatil Kirana Stores 7",
+        "category": "Grocery",
+        "location": "Badlapur",
+        "contact": "9876543210",
+        "description": "Daily needs and groceries for your home",
+        "image": "https://via.placeholder.com/150"
+      },
+      {
+        "name": "Ssshree Mobile Shop",
+        "category": "Electronics",
+        "location": "Nashik",
+        "contact": "9123456780",
+        "description": "Latest phones and accessories",
+        "image": "https://via.placeholder.com/150"
+      },
+      {
+          "name": "Patil Kirana Stores",
+          "category": "Grocery",
+          "location": "Badlapur",
+          "contact": "9876543210",
+          "description": "Daily needs and groceries for your home",
+          "image": "https://via.placeholder.com/150"
+      },
+      {
+          "name": "Shree Mobile Shop",
+          "category": "Electronics",
+          "location": "Nashik",
+          "contact": "9123456780",
+          "description": "Latest phones and accessories",
+          "image": "https://via.placeholder.com/150"
+      },
+      {
+          "name": "Patil Kirana Stores",
+          "category": "Grocery",
+          "location": "Badlapur",
+          "contact": "9876543210",
+          "description": "Daily needs and groceries for your home",
+          "image": "https://via.placeholder.com/150"
+      },
+      {
+          "name": "Shree Mobile Shop",
+          "category": "Electronics",
+          "location": "Nashik",
+          "contact": "9123456780",
+          "description": "Latest phones and accessories",
+          "image": "https://via.placeholder.com/150"
+      },
+      {
+        "name": "Patil Kirana Stores",
+        "category": "Grocery",
+        "location": "Badlapur",
+        "contact": "9876543210",
+        "description": "Daily needs and groceries for your home",
+        "image": "https://via.placeholder.com/150"
+      },
+      {
+        "name": "Shree Mobile Shop",
+        "category": "Electronics",
+        "location": "Nashik",
+        "contact": "9123456780",
+        "description": "Latest phones and accessories",
+        "image": "https://via.placeholder.com/150"
+      },
+      {
+          "name": "Patil Kirana Stores",
+          "category": "Grocery",
+          "location": "Badlapur",
+          "contact": "9876543210",
+          "description": "Daily needs and groceries for your home",
+          "image": "https://via.placeholder.com/150"
+      },
+      {
+          "name": "Shree Mobile Shop",
+          "category": "Electronics",
+          "location": "Nashik",
+          "contact": "9123456780",
+          "description": "Latest phones and accessories",
+          "image": "https://via.placeholder.com/150"
+      },
+      {
+          "name": "Patil Kirana Stores",
+          "category": "Grocery",
+          "location": "Badlapur",
+          "contact": "9876543210",
+          "description": "Daily needs and groceries for your home",
+          "image": "https://via.placeholder.com/150"
+      },
+      {
+          "name": "Shree Mobile Shop",
+          "category": "Electronics",
+          "location": "Nashik",
+          "contact": "9123456780",
+          "description": "Latest phones and accessories",
+          "image": "https://via.placeholder.com/150"
+      }
+      
+]
+  
