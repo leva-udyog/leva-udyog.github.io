@@ -25,19 +25,19 @@
     <!-- Filters -->
     <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-6">
       <input id="search" type="text" placeholder="🔍 Search by name"
-        class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500" />
 
       <select id="categoryFilter"
-        class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500">
         <option value="">All Categories</option>
       </select>
 
       <select id="locationFilter"
-        class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-        <option value="">All Locations</option>
+        class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500">
+        <option value="">All Cities</option>
       </select>
 
-      <select id="sortBy" class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <select id="sortBy" class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500">
         <option value="">Sort By</option>
         <option value="name">Name (A-Z)</option>
         <option value="location">Location (A-Z)</option>
@@ -52,34 +52,55 @@
   </main>
 
   <!-- Modal for Detail View -->
-  <div id="modal" class="fixed inset-0 hidden bg-black bg-opacity-50 z-50 flex items-center justify-center px-4 sm:px-0">
-    <div id="modal-content" class="bg-white p-6 rounded-lg shadow-lg w-full relative max-w-xl sm:max-w-md max-h-[90vh] overflow-y-auto" >
-      <button id="closeModal" class="absolute top-2 right-2 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-gray text-xl focus:outline-none">✖</button>
-      <h2 id="modalName" class="text-2xl font-bold text-blue-700 mb-2"></h2>
-      <img id="modalImage" class="w-full h-48 object-cover rounded mb-2" />
-      <p id="modalCategory"></p>
-      <p id="modalLocation"></p>
-      <p id="modalDescription" class="text-sm mt-2"></p>
-      <p id="modalContact" class="mt-2 font-medium text-blue-600"></p>
-      <p id="modalEmail" class="mt-2 font-medium text-blue-600"></p>
-      <!-- Products -->
-      <div id="modalProducts" class="mt-4">
-        <h3 class="font-semibold text-lg text-blue-700">Products:</h3>
-        <div id="modalProductList" class="list-disc pl-5"></div>
-      </div>
+<!-- Modal for Detail View -->
+<div id="modal" class="fixed inset-0 hidden bg-black bg-opacity-50 z-50 flex items-center justify-center px-4 sm:px-0">
+  <div id="modal-content" class="bg-white p-6 rounded-lg shadow-lg w-full relative max-w-xl sm:max-w-md max-h-[90vh] overflow-y-auto">
+    
+    <!-- Close Button -->
+    <button id="closeModal" class="absolute top-2 right-2 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-gray-600 text-xl hover:bg-gray-300 focus:outline-none">✖</button>
 
-      <!-- Services -->
-      <div id="modalServices" class="mt-4">
-        <h3 class="font-semibold text-lg text-blue-700">Services:</h3>
-        <div id="modalServiceList" class="list-disc pl-5"></div>
-      </div>
-      <div id="modalMap" class="w-full h-56 mt-4"></div>
+    <!-- Header -->
+    <div class="text-center mb-4">
+      <h2 id="modalName" class="text-2xl font-bold text-gray-700"></h2>
+      <p id="modalCategory" class="text-sm text-gray-500"></p>
     </div>
+
+    <!-- Image -->
+    <div class="mb-4">
+      <img id="modalImage" class="w-full h-48 object-cover rounded-md" />
+    </div>
+
+    <!-- Basic Info -->
+    <div class="space-y-1 text-sm text-gray-700">
+      <p><strong>Location:</strong> <span id="modalLocation"></span></p>
+      <p><strong>Address:</strong> <span id="modalAddress"></span></p>
+      <p><strong>Description:</strong> <span id="modalDescription"></span></p>
+      <p><strong>Owner:</strong> <span id="modalOwner" class="text-gray-800"></span></p>
+      <p><strong>Contact:</strong> <span id="modalContact" class="text-gray-600 font-medium"></span></p>
+      <p><strong>Email:</strong> <span id="modalEmail" class="text-gray-600 font-medium"></span></p>
+    </div>
+
+    <!-- Products -->
+    <div id="modalProducts" class="mt-4">
+      <h3 class="font-semibold text-lg text-gray-700 mb-1">Products</h3>
+      <ul id="modalProductList" class="list-disc list-inside text-sm text-gray-800"></ul>
+    </div>
+
+    <!-- Services -->
+    <div id="modalServices" class="mt-4">
+      <h3 class="font-semibold text-lg text-gray-700 mb-1">Services</h3>
+      <ul id="modalServiceList" class="list-disc list-inside text-sm text-gray-800"></ul>
+    </div>
+
+    <!-- Google Map -->
+    <div id="modalMap" class="w-full h-56 mt-6 rounded-md overflow-hidden"></div>
   </div>
+</div>
+
 
   <!-- Scroll to Top Button -->
   <button id="scrollTop"
-    class="fixed bottom-6 right-6 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hidden">
+    class="fixed bottom-6 right-6 bg-gray-600 text-white px-4 py-2 rounded-full shadow-lg hidden">
     ⬆️ Top
   </button>
 
@@ -131,14 +152,19 @@
     }
 
     function filterBusinesses() {
-      const search = document.getElementById("search").value.toLowerCase();
+      const search = document.getElementById("search").value.toLowerCase().trim();
       const category = document.getElementById("categoryFilter").value;
       const location = document.getElementById("locationFilter").value;
       const sortBy = document.getElementById("sortBy").value;
 
       let filtered = businesses.filter(b => {
         return (
-          b.name.toLowerCase().includes(search) &&
+          (
+            b.name.toLowerCase().includes(search) ||
+            b.description.toLowerCase().includes(search) ||
+            b.owner.toLowerCase().includes(search) ||
+            b.address.toLowerCase().includes(search)
+          ) &&
           (category === "" || b.category === category) &&
           (location === "" || b.location === location)
         );
@@ -182,7 +208,7 @@
 
       for (let i = 1; i <= totalPages; i++) {
         const btn = document.createElement("button");
-        btn.className = `px-3 py-1 rounded border ${i === currentPage ? 'bg-blue-600 text-white' : 'bg-white text-blue-600'} hover:bg-blue-100`;
+        btn.className = `px-3 py-1 rounded border ${i === currentPage ? 'bg-gray-600 text-white' : 'bg-white text-gray-600'} hover:bg-gray-100`;
         btn.textContent = i;
         btn.addEventListener("click", () => {
           currentPage = i;
@@ -197,11 +223,13 @@
       document.getElementById("modalName").textContent = biz.name;
       document.getElementById("modalImage").src = biz.image;
       document.getElementById("modalCategory").textContent = `Category: ${biz.category}`;
-      document.getElementById("modalLocation").textContent = `Location: ${biz.location}`;
+      document.getElementById("modalAddress").textContent = `${biz.address}`;
+      document.getElementById("modalOwner").textContent = `${biz.owner}`;
+      document.getElementById("modalLocation").textContent = `${biz.location}`;
       document.getElementById("modalDescription").textContent = biz.description;
-      document.getElementById("modalContact").textContent = `📞 ${biz.contact}`;
+      document.getElementById("modalContact").textContent = `${biz.contact}`;
       if(biz.email){
-        document.getElementById("modalEmail").textContent = `✉️ ${biz.email}`;
+        document.getElementById("modalEmail").textContent = `${biz.email}`;
       } 
       else{
         document.getElementById("modalEmail").textContent = '';

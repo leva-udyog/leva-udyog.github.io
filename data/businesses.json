@@ -17,7 +17,9 @@
         "Online Ordering"
       ],
       "image": "https://via.placeholder.com/150",
-      "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+      "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629",
+      "address": "123 Main St, Badlapur, Maharashtra",
+      "owner": "Ganesh Patil"
     },
     {
       "name": "Shree Mobile Shop",
@@ -28,7 +30,9 @@
       "products": ["iPhone", "Samsung Galaxy", "OnePlus"],
       "services": ["Repair Services", "Accessories"],
       "image": "https://via.placeholder.com/150",
-      "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+      "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629",
+      "address": "456 Elm St, Nashik, Maharashtra",
+      "owner": "Abcd"
     },
     {
         "name": "Ganesh Enterprises",
@@ -38,7 +42,9 @@
         "description": "The Best Electrical And Hardware Shop",
         "services": ["All types of Electricals works and services"],
         "image": "https://via.placeholder.com/150",
-        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629",
+        "address": "789 Oak St, Thane, Maharashtra",
+        "owner": "Ganesh Patil"
     },
     {
         "name": "ABC Electronics",
@@ -49,7 +55,9 @@
         "products": ["iPhone", "Samsung Galaxy", "OnePlus"],
         "services": ["Repair Services", "Accessories"],
         "image": "https://via.placeholder.com/150",
-        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629",
+        "address": "101 Pine St, Badlapur, Maharashtra",
+        "owner": "Ganesh Patil"
     },
     {
         "name": "XYZ Kirana Stores",
@@ -69,7 +77,9 @@
           "Online Ordering"
         ],
         "image": "https://via.placeholder.com/150",
-        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629",
+        "address": "202 Maple St, Nashik, Maharashtra",
+        "owner": "Ganesh Patil"
     },
     {
         "name": "Wellness Forever Pharmacy",
@@ -88,7 +98,9 @@
           "Online Ordering"
         ],
         "image": "https://via.placeholder.com/150",
-        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629",
+        "address": "303 Birch St, Thane, Maharashtra",
+        "owner": "Ganesh Patil"
     },
     {
         "name": "xyz Electronics",
@@ -99,7 +111,9 @@
         "products": ["iPhone", "Samsung Galaxy", "OnePlus"],
         "services": ["Repair Services", "Accessories"],
         "image": "https://via.placeholder.com/150",
-        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629",
+        "address": "404 Cedar St, Badlapur, Maharashtra",
+        "owner": "Ganesh Patil"
     },
     {
         "name": "ABC Tution",
@@ -109,7 +123,9 @@
         "description": "Best Tution Classes in Badlapur",
         "services": ["Teaching for 1st to 10th std", "Online Classes"],
         "image": "https://via.placeholder.com/150",
-        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629",
+        "address": "505 Spruce St, Badlapur, Maharashtra",
+        "owner": "Ganesh Patil"
     },
     {
         "name": "xyz Tution",
@@ -119,7 +135,9 @@
         "description": "Best Tution Classes in Badlapur",
         "services": ["Teaching for 1st to 10th std", "Online Classes"],
         "image": "https://via.placeholder.com/150",
-        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629",
+        "address": "606 Fir St, Badlapur, Maharashtra",
+        "owner": "XYZ"
     },
     {
         "name": "ABC xerox center",
@@ -129,7 +147,9 @@
         "description": "Best xerox center in Badlapur",
         "services": ["xerox", "lamination", "binding"],
         "image": "https://via.placeholder.com/150",
-        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629",
+        "address": "707 Willow St, Badlapur, Maharashtra",
+        "owner": "ABC"
     },
     {
         "name": "Vivek Kirana Stores",
@@ -149,7 +169,9 @@
           "Online Ordering"
         ],
         "image": "https://via.placeholder.com/150",
-        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629",
+        "address": "808 Ash St, Badlapur, Maharashtra",
+        "owner":"ABC"
     },
     {
         "name": "Hotel ABC",
@@ -169,7 +191,9 @@
           "Online Ordering"
         ],
         "image": "https://via.placeholder.com/150",
-        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629",
+        "address": "909 Maple St, Badlapur, Maharashtra",
+        "owner":"Ganesh Patil"
     },
     {
         "name": "Hotel XYZ",
@@ -188,7 +212,9 @@
           "Online Ordering"
         ],
         "image": "https://via.placeholder.com/150",
-        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629",
+        "address": "1010 Birch St, Badlapur, Maharashtra",
+        "owner":"Vivek Patil"
     },
     {
         "name": "ABC stationery",
@@ -207,7 +233,9 @@
           "Online Ordering"
         ],
         "image": "https://via.placeholder.com/150",
-        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629",
+        "address": "1111 Cedar St, Badlapur, Maharashtra",
+        "owner":"Vihan Chaudhari"
     }
 ]
   
