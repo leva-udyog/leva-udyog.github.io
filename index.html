@@ -9,16 +9,6 @@
   <!-- Tailwind CSS (latest version) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <style>
-    /* Optional custom styling for dark mode */
-    body.dark {
-      background-color: #1a202c;
-      color: white;
-    }
-    .dark .card {
-      background-color: #2d3748;
-    }
-  </style>
 </head>
 
 <body class="bg-gray-100 font-sans text-gray-800">
@@ -63,24 +53,24 @@
 
   <!-- Modal for Detail View -->
   <div id="modal" class="fixed inset-0 hidden bg-black bg-opacity-50 z-50 flex items-center justify-center px-4 sm:px-0">
-    <div id="modal-content" class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg w-full relative max-w-xl sm:max-w-md max-h-[90vh] overflow-y-auto" >
+    <div id="modal-content" class="bg-white p-6 rounded-lg shadow-lg w-full relative max-w-xl sm:max-w-md max-h-[90vh] overflow-y-auto" >
       <button id="closeModal" class="absolute top-2 right-2 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-gray text-xl focus:outline-none">✖</button>
-      <h2 id="modalName" class="text-2xl font-bold text-blue-700 dark:text-yellow-300 mb-2"></h2>
+      <h2 id="modalName" class="text-2xl font-bold text-blue-700 mb-2"></h2>
       <img id="modalImage" class="w-full h-48 object-cover rounded mb-2" />
       <p id="modalCategory"></p>
       <p id="modalLocation"></p>
       <p id="modalDescription" class="text-sm mt-2"></p>
-      <p id="modalContact" class="mt-2 font-medium text-blue-600 dark:text-yellow-200"></p>
-      <p id="modalEmail" class="mt-2 font-medium text-blue-600 dark:text-yellow-200"></p>
+      <p id="modalContact" class="mt-2 font-medium text-blue-600"></p>
+      <p id="modalEmail" class="mt-2 font-medium text-blue-600"></p>
       <!-- Products -->
       <div id="modalProducts" class="mt-4">
-        <h3 class="font-semibold text-lg text-blue-700 dark:text-yellow-300">Products:</h3>
+        <h3 class="font-semibold text-lg text-blue-700">Products:</h3>
         <div id="modalProductList" class="list-disc pl-5"></div>
       </div>
 
       <!-- Services -->
       <div id="modalServices" class="mt-4">
-        <h3 class="font-semibold text-lg text-blue-700 dark:text-yellow-300">Services:</h3>
+        <h3 class="font-semibold text-lg text-blue-700">Services:</h3>
         <div id="modalServiceList" class="list-disc pl-5"></div>
       </div>
       <div id="modalMap" class="w-full h-56 mt-4"></div>
@@ -94,7 +84,7 @@
   </button>
 
   <!-- Footer -->
-  <footer class="bg-gray-200 text-center text-sm py-4 mt-10 text-gray-600 dark:bg-gray-800 dark:text-gray-300">
+  <footer class="bg-gray-200 text-center text-sm py-4 mt-10 text-gray-600 ">
     &copy; 2025 Leva Udyog. Built with ❤️ for the community.
   </footer>
 
@@ -171,11 +161,11 @@
 
       paginated.forEach(biz => {
         const card = document.createElement("div");
-        card.className = "bg-white rounded-lg shadow-md p-4 card dark:bg-gray-700 cursor-pointer";
+        card.className = "bg-white rounded-lg shadow-md p-4 card cursor-pointer";
         card.setAttribute("data-aos", "fade-up");
         card.innerHTML = `
           <img loading="lazy" src="${biz.image}" class="w-full h-40 object-cover mb-2 rounded" />
-          <h2 class="text-xl font-bold text-gray-600 dark:text-yellow-300">${biz.name}</h2>
+          <h2 class="text-xl font-bold text-gray-600 ">${biz.name}</h2>
           <p class="text-gray-500 text-sm"><strong>Category:</strong> ${biz.category}</p>
           <p class="text-gray-500 text-sm"><strong>Location:</strong> ${biz.location}</p>
         `;
