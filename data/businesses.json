@@ -1,6 +1,6 @@
 [
     {
-      "name": "Patil Kirana Stores 1",
+      "name": "Patil Kirana Stores",
       "category": "Grocery",
       "location": "Badlapur",
       "contact": "9876543210",
@@ -20,7 +20,7 @@
       "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
     },
     {
-      "name": "Shree Mobile Shop 2",
+      "name": "Shree Mobile Shop",
       "category": "Electronics",
       "location": "Nashik",
       "contact": "9123456780",
@@ -31,143 +31,183 @@
       "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
     },
     {
-        "name": "Patil Kirana Stores 3",
-        "category": "Grocery",
+        "name": "Ganesh Enterprises",
+        "category": "Electicals",
+        "location": "Thane",
+        "contact": "9123456780",
+        "description": "The Best Electrical And Hardware Shop",
+        "services": ["All types of Electricals works and services"],
+        "image": "https://via.placeholder.com/150",
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+    },
+    {
+        "name": "ABC Electronics",
+        "category": "Electronics",
         "location": "Badlapur",
+        "contact": "9123456780",
+        "description": "Latest phones and accessories",
+        "products": ["iPhone", "Samsung Galaxy", "OnePlus"],
+        "services": ["Repair Services", "Accessories"],
+        "image": "https://via.placeholder.com/150",
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+    },
+    {
+        "name": "XYZ Kirana Stores",
+        "category": "Grocery",
+        "location": "Nashik",
         "contact": "9876543210",
+        "email": "ancd@gmailc.com",
+        "description": "Daily needs and groceries for your home",
         "products": [
-            "Rice",
-            "Wheat",
-            "Sugar",
-            "Spices"
+          "Rice",
+          "Wheat",
+          "Sugar",
+          "Spices"
         ],
         "services": [
-            "Home Delivery",
-            "Online Ordering"
+          "Home Delivery",
+          "Online Ordering"
         ],
-        "description": "Daily needs and groceries for your home",
-        "image": "https://via.placeholder.com/150"
+        "image": "https://via.placeholder.com/150",
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
     },
     {
-        "name": "Shree Mobile Shop 4",
+        "name": "Wellness Forever Pharmacy",
+        "category": "Pharmacy",
+        "location": "Thane",
+        "contact": "9876543210",
+        "email": "abncd@gmail.com",
+        "description": "Medicines and health products",
+        "products": [
+          "Medicines",
+          "Health Supplements",
+          "Personal Care"
+        ],
+        "services": [
+          "Home Delivery",
+          "Online Ordering"
+        ],
+        "image": "https://via.placeholder.com/150",
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+    },
+    {
+        "name": "xyz Electronics",
         "category": "Electronics",
-        "location": "Nashik",
+        "location": "Badlapur",
         "contact": "9123456780",
         "description": "Latest phones and accessories",
-        "image": "https://via.placeholder.com/150"
+        "products": ["iPhone", "Samsung Galaxy", "OnePlus"],
+        "services": ["Repair Services", "Accessories"],
+        "image": "https://via.placeholder.com/150",
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
     },
     {
-        "name": "Patil Kirana Stores 5",
+        "name": "ABC Tution",
+        "category": "Education",
+        "location": "Badlapur",
+        "contact": "9123456780",
+        "description": "Best Tution Classes in Badlapur",
+        "services": ["Teaching for 1st to 10th std", "Online Classes"],
+        "image": "https://via.placeholder.com/150",
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+    },
+    {
+        "name": "xyz Tution",
+        "category": "Education",
+        "location": "Badlapur",
+        "contact": "9123456780",
+        "description": "Best Tution Classes in Badlapur",
+        "services": ["Teaching for 1st to 10th std", "Online Classes"],
+        "image": "https://via.placeholder.com/150",
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+    },
+    {
+        "name": "ABC xerox center",
+        "category": "Services",
+        "location": "Badlapur",
+        "contact": "9123456780",
+        "description": "Best xerox center in Badlapur",
+        "services": ["xerox", "lamination", "binding"],
+        "image": "https://via.placeholder.com/150",
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+    },
+    {
+        "name": "Vivek Kirana Stores",
         "category": "Grocery",
         "location": "Badlapur",
         "contact": "9876543210",
+        "email": "",
         "description": "Daily needs and groceries for your home",
-        "image": "https://via.placeholder.com/150"
+        "products": [
+          "Rice",
+          "Wheat",
+          "Sugar",
+          "Spices"
+        ],
+        "services": [
+          "Home Delivery",
+          "Online Ordering"
+        ],
+        "image": "https://via.placeholder.com/150",
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
     },
     {
-        "name": "Shree Mobile Shop 6 ",
-        "category": "Electronics",
-        "location": "Nashik",
-        "contact": "9123456780",
-        "description": "Latest phones and accessories",
-        "image": "https://via.placeholder.com/150"
+        "name": "Hotel ABC",
+        "category": "Restaurant",
+        "location": "Badlapur",
+        "contact": "9876543210",
+        "email": "",
+        "description": "Best hotel in Badlapur",
+        "products": [
+          "Veg",
+          "Non-Veg",
+          "Chinese",
+          "Indian"
+        ],
+        "services": [
+          "Home Delivery",
+          "Online Ordering"
+        ],
+        "image": "https://via.placeholder.com/150",
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
     },
     {
-        "name": "Psatil Kirana Stores 7",
-        "category": "Grocery",
+        "name": "Hotel XYZ",
+        "category": "Restaurant",
         "location": "Badlapur",
         "contact": "9876543210",
-        "description": "Daily needs and groceries for your home",
-        "image": "https://via.placeholder.com/150"
-      },
-      {
-        "name": "Ssshree Mobile Shop",
-        "category": "Electronics",
-        "location": "Nashik",
-        "contact": "9123456780",
-        "description": "Latest phones and accessories",
-        "image": "https://via.placeholder.com/150"
-      },
-      {
-          "name": "Patil Kirana Stores",
-          "category": "Grocery",
-          "location": "Badlapur",
-          "contact": "9876543210",
-          "description": "Daily needs and groceries for your home",
-          "image": "https://via.placeholder.com/150"
-      },
-      {
-          "name": "Shree Mobile Shop",
-          "category": "Electronics",
-          "location": "Nashik",
-          "contact": "9123456780",
-          "description": "Latest phones and accessories",
-          "image": "https://via.placeholder.com/150"
-      },
-      {
-          "name": "Patil Kirana Stores",
-          "category": "Grocery",
-          "location": "Badlapur",
-          "contact": "9876543210",
-          "description": "Daily needs and groceries for your home",
-          "image": "https://via.placeholder.com/150"
-      },
-      {
-          "name": "Shree Mobile Shop",
-          "category": "Electronics",
-          "location": "Nashik",
-          "contact": "9123456780",
-          "description": "Latest phones and accessories",
-          "image": "https://via.placeholder.com/150"
-      },
-      {
-        "name": "Patil Kirana Stores",
-        "category": "Grocery",
+        "email": "",
+        "description": "Best Veg hotel in Badlapur",
+        "products": [
+          "Veg",
+          "Chinese",
+          "Indian"
+        ],
+        "services": [
+          "Home Delivery",
+          "Online Ordering"
+        ],
+        "image": "https://via.placeholder.com/150",
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+    },
+    {
+        "name": "ABC stationery",
+        "category": "Stationery",
         "location": "Badlapur",
-        "contact": "9876543210",
-        "description": "Daily needs and groceries for your home",
-        "image": "https://via.placeholder.com/150"
-      },
-      {
-        "name": "Shree Mobile Shop",
-        "category": "Electronics",
-        "location": "Nashik",
         "contact": "9123456780",
-        "description": "Latest phones and accessories",
-        "image": "https://via.placeholder.com/150"
-      },
-      {
-          "name": "Patil Kirana Stores",
-          "category": "Grocery",
-          "location": "Badlapur",
-          "contact": "9876543210",
-          "description": "Daily needs and groceries for your home",
-          "image": "https://via.placeholder.com/150"
-      },
-      {
-          "name": "Shree Mobile Shop",
-          "category": "Electronics",
-          "location": "Nashik",
-          "contact": "9123456780",
-          "description": "Latest phones and accessories",
-          "image": "https://via.placeholder.com/150"
-      },
-      {
-          "name": "Patil Kirana Stores",
-          "category": "Grocery",
-          "location": "Badlapur",
-          "contact": "9876543210",
-          "description": "Daily needs and groceries for your home",
-          "image": "https://via.placeholder.com/150"
-      },
-      {
-          "name": "Shree Mobile Shop",
-          "category": "Electronics",
-          "location": "Nashik",
-          "contact": "9123456780",
-          "description": "Latest phones and accessories",
-          "image": "https://via.placeholder.com/150"
-      }
-      
+        "description": "Best stationery shop in Badlapur",
+        "products": [
+          "Books",
+          "Pens",
+          "Pencils",
+          "Notebooks"
+        ],
+        "services": [
+          "Home Delivery",
+          "Online Ordering"
+        ],
+        "image": "https://via.placeholder.com/150",
+        "googleMapLink": "https://www.google.com/maps?q=20.5937,78.9629"
+    }
 ]
   
