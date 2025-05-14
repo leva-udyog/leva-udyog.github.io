@@ -13,10 +13,9 @@
 
 <body class="bg-gray-100 font-sans text-gray-800">
   <!-- Header -->
-  <header class="bg-cyan-800 text-white p-4 shadow-md">
+  <header class="bg-cyan-500 text-white p-4 shadow-md">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-2xl font-bold">Leva Udyog</h1>
-
     </div>
   </header>
 
@@ -24,7 +23,7 @@
   <main class="container mx-auto py-8 px-4">
     <!-- Filters -->
     <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-6">
-      <input id="search" type="text" placeholder="🔍 Search by name"
+      <input id="search" type="text" placeholder="🔍 Search by name, owner, address"
         class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500" />
 
       <select id="categoryFilter"
@@ -189,8 +188,9 @@
         const card = document.createElement("div");
         card.className = "bg-white rounded-lg shadow-md p-4 card cursor-pointer";
         card.setAttribute("data-aos", "fade-up");
+        // <img loading="lazy" src="${biz.image}" class="w-full h-40 object-cover mb-2 rounded" />
         card.innerHTML = `
-          <img loading="lazy" src="${biz.image}" class="w-full h-40 object-cover mb-2 rounded" />
+          <img loading="lazy" src="https://placehold.co/800?text=${biz.name}&font=roboto" class="w-full h-40 object-cover mb-2 rounded" />
           <h2 class="text-xl font-bold text-gray-600 ">${biz.name}</h2>
           <p class="text-gray-500 text-sm"><strong>Category:</strong> ${biz.category}</p>
           <p class="text-gray-500 text-sm"><strong>Location:</strong> ${biz.location}</p>
@@ -221,7 +221,8 @@
     function openModal(biz) {
       document.getElementById("modal").classList.remove("hidden");
       document.getElementById("modalName").textContent = biz.name;
-      document.getElementById("modalImage").src = biz.image;
+      document.getElementById("modalImage").src = "https://placehold.co/800?text="+biz.name+"&font=roboto"
+      // biz.image;
       document.getElementById("modalCategory").textContent = `Category: ${biz.category}`;
       document.getElementById("modalAddress").textContent = `${biz.address}`;
       document.getElementById("modalOwner").textContent = `${biz.owner}`;
